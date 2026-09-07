@@ -1,37 +1,402 @@
-<!DOCTYPE html> 
-<html lang="th"> 
-<head> 
- <meta charset="UTF-8"> 
- <title>หน้าแนะนำตัวของฉัน</title> 
- <style> 
-body { 
-background-color: #002558; color: #333; 
-text-align: center; padding: 50px; 
- } 
-.card { 
-background: white; border-radius: 50px; 
-box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-max-width: 500px; margin: 0 auto; padding: 30px; 
- } 
-h1 { color: #2c3e50; } 
-p { font-size: 18px; line-height: 1.6; } 
- </style> 
-</head> 
-<body> 
- <div class="card"> 
- <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1> 
- <p>สวัสดีครับ! ผมชื่อ <strong>วรวัฒน์ เกษร (Worawat kesorn)</strong></p> 
- <p>ขณะนี้กำลังศึกษา/สนใจด้าน College of music</p> 
-  <a href="portfolio.html" class="btn"> ดูแฟ้มสะสมผลงานของฉัน</a>
- <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!</p> 
- </div> 
-</body> 
-</html>  
-<a href="profile.html" class="btn btn-profile">
-    👤 เข้าชมประวัติส่วนตัว
-</a>
+<!DOCTYPE html>
 
-<a href="portfolio.html" class="btn btn-portfolio">
-    📁 แฟ้มสะสมผลงาน
-</a>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Worawat Kesorn | Portfolio</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Kanit", sans-serif;
+        min-height: 100vh;
+        color: white;
+        overflow: hidden;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================= */
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(3, 25, 72, 0.96),
+                rgba(7, 47, 105, 0.88),
+                rgba(0, 20, 55, 0.96)
+            );
+    }
+
+    /* แสงสีทองด้านหลัง */
+
+    body::after {
+        content: "";
+        position: fixed;
+        width: 700px;
+        height: 700px;
+        right: -250px;
+        top: -250px;
+
+        background: radial-gradient(
+            circle,
+            rgba(255, 193, 7, 0.25),
+            transparent 65%
+        );
+
+        z-index: -2;
+    }
+
+    /* =========================
+       DECORATION
+    ========================= */
+
+    .gold-light {
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        left: -250px;
+        bottom: -250px;
+
+        background: radial-gradient(
+            circle,
+            rgba(255, 193, 7, 0.20),
+            transparent 65%
+        );
+
+        z-index: -1;
+    }
+
+    .line {
+        position: fixed;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 204, 65, 0.5),
+            transparent
+        );
+        top: 20%;
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .container {
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        padding: 30px;
+    }
+
+    .content {
+        max-width: 900px;
+
+        padding: 60px 50px;
+
+        background: rgba(255, 255, 255, 0.07);
+
+        border: 1px solid rgba(255, 215, 80, 0.25);
+
+        border-radius: 28px;
+
+        backdrop-filter: blur(14px);
+
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.45),
+            inset 0 0 40px rgba(255, 255, 255, 0.03);
+
+        animation: fadeUp 1.2s ease;
+    }
+
+    /* =========================
+       GOLD LINE
+    ========================= */
+
+    .gold-line {
+        width: 90px;
+        height: 4px;
+
+        margin: 0 auto 30px;
+
+        border-radius: 20px;
+
+        background: linear-gradient(
+            90deg,
+            #c69214,
+            #ffe082,
+            #c69214
+        );
+
+        box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+    }
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .welcome {
+        color: #f8d675;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+
+    h1 {
+        font-size: clamp(38px, 7vw, 70px);
+        font-weight: 600;
+
+        color: #ffffff;
+
+        text-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.4);
+
+        margin-bottom: 15px;
+    }
+
+    .interest {
+        font-size: clamp(20px, 3vw, 30px);
+
+        color: #f5f5f5;
+
+        font-weight: 300;
+
+        margin-bottom: 45px;
+    }
+
+    .interest span {
+        color: #ffd65a;
+        font-weight: 500;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .portfolio-button {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 17px 38px;
+
+        border-radius: 50px;
+
+        text-decoration: none;
+
+        font-size: 19px;
+        font-weight: 500;
+
+        color: #06245c;
+
+        background: linear-gradient(
+            135deg,
+            #f6c453,
+            #ffe99a,
+            #dcae2f
+        );
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.35),
+            0 0 25px rgba(255, 203, 67, 0.25);
+
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            filter 0.3s ease;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* แสงวิ่งผ่านปุ่ม */
+
+    .portfolio-button::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: -120%;
+
+        width: 80%;
+        height: 100%;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.65),
+            transparent
+        );
+
+        transform: skewX(-20deg);
+
+        transition: left 0.7s ease;
+    }
+
+    .portfolio-button:hover::before {
+        left: 140%;
+    }
+
+    .portfolio-button:hover {
+        transform: translateY(-6px) scale(1.03);
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.45),
+            0 0 40px rgba(255, 211, 77, 0.45);
+
+        filter: brightness(1.08);
+    }
+
+    .portfolio-button:active {
+        transform: translateY(-2px) scale(0.98);
+    }
+
+    .arrow {
+        font-size: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    .portfolio-button:hover .arrow {
+        transform: translateX(6px);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+        margin-top: 45px;
+
+        color: rgba(255, 255, 255, 0.55);
+
+        font-size: 14px;
+
+        letter-spacing: 0.5px;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeUp {
+
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .content {
+            padding: 45px 22px;
+            border-radius: 22px;
+        }
+
+        .welcome {
+            font-size: 15px;
+        }
+
+        .interest {
+            line-height: 1.6;
+        }
+
+        .portfolio-button {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 17px;
+        }
+
+        .footer {
+            margin-top: 30px;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="gold-light"></div>
+<div class="line"></div>
+
+<main class="container">
+
+    <section class="content">
+
+        <div class="gold-line"></div>
+
+        <p class="welcome">
+            WELCOME TO MY PORTFOLIO
+        </p>
+
+        <h1>
+            นายวรวัฒน์ เกษร
+        </h1>
+
+        <p class="interest">
+            ผมกำลังสนใจ
+            <span>College of Music</span>
+        </p>
+
+        <a href="portfolio.html" class="portfolio-button">
+            <span>ดูแฟ้มสะสมผลงานของฉัน</span>
+            <span class="arrow">→</span>
+        </a>
+
+        <p class="footer">
+            Personal Portfolio • 2026
+        </p>
+
+    </section>
+
+</main>
+```
+
+</body>
+</html>
 

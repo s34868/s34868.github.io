@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Volunteer Portfolio | วรวัฒน์ เกษร</title>
+
+
+<!-- ================= FONT ================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<!-- ================= CSS ================= -->
+
+<style>
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+    font-family: "Prompt", sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(37, 91, 165, 0.45),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(244, 199, 71, 0.14),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #021632,
+            #082d5d 50%,
+            #020d20
+        );
+}
+
+
+/* =========================================
+   BACKGROUND LIGHT
+========================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(61, 128, 218, 0.08);
+
+    filter: blur(90px);
+
+    top: -220px;
+    left: -180px;
+
+    pointer-events: none;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 205, 74, 0.06);
+
+    filter: blur(100px);
+
+    right: -200px;
+    bottom: -180px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+
+    text-align: center;
+
+    padding:
+        75px
+        20px
+        55px;
+
+    position: relative;
+}
+
+
+.welcome {
+
+    color: #f4ca4d;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 22px;
+}
+
+
+.welcome::before,
+.welcome::after {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 70px;
+
+    height: 2px;
+
+    vertical-align: middle;
+
+    margin: 0 15px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #f3c84b
+        );
+}
+
+
+h1 {
+
+    font-family: "Kanit", sans-serif;
+
+    font-size:
+        clamp(42px, 6vw, 76px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #f6d567,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    text-shadow:
+        0 0 30px
+        rgba(255, 208, 70, 0.15);
+}
+
+
+.name {
+
+    margin-top: 22px;
+
+    font-family: "Kanit", sans-serif;
+
+    font-size: 28px;
+
+    color: #ffffff;
+}
+
+
+.subtitle {
+
+    margin-top: 5px;
+
+    color: #f4ca4d;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    font-weight: 500;
+}
+
+
+.gold-line {
+
+    width: 180px;
+
+    height: 3px;
+
+    margin:
+        28px
+        auto;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #f3c84b,
+            transparent
+        );
+}
+
+
+.quote {
+
+    color: #b9cbe2;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    width:
+        min(
+            1100px,
+            92%
+        );
+
+    margin: auto;
+
+    padding-bottom: 80px;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.section-title h2 {
+
+    font-family: "Kanit", sans-serif;
+
+    font-size: 34px;
+
+    font-weight: 600;
+}
+
+
+.section-title h2 span {
+
+    color: #f4ca4d;
+}
+
+
+.section-title p {
+
+    margin-top: 8px;
+
+    color: #9fb6d3;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PORTFOLIO GRID
+========================================= */
+
+.portfolio {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(15, 55, 103, 0.97),
+            rgba(2, 20, 45, 0.98)
+        );
+
+    border:
+        1px solid
+        rgba(243, 198, 70, 0.68);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0, 0, 0, 0.35),
+
+        0 0 20px
+        rgba(243, 198, 70, 0.05);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+
+        0 30px 60px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 35px
+        rgba(243, 198, 70, 0.18);
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.number {
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 15px;
+    left: 15px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: #09264c;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffe68b,
+            #d9aa2e
+        );
+
+    box-shadow:
+
+        0 7px 20px
+        rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   A4 IMAGE
+========================================= */
+
+.a4-image {
+
+    width: 100%;
+
+    /*
+       กระดาษ A4 แนวตั้ง
+       210 × 297
+    */
+
+    aspect-ratio:
+        210 / 297;
+
+    background: white;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.a4-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    /*
+       แสดงภาพ A4 ทั้งหน้า
+       ไม่ตัดขอบ
+    */
+
+    object-fit: contain;
+
+    display: block;
+
+    background: white;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.card:hover
+.a4-image img {
+
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content {
+
+    padding: 24px;
+}
+
+
+.icon {
+
+    font-size: 36px;
+
+    margin-bottom: 6px;
+}
+
+
+.content h3 {
+
+    font-family: "Kanit", sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+}
+
+
+.english {
+
+    color: #f4ca4d;
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 2px;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================
+   DESCRIPTION BOX
+========================================= */
+
+.description {
+
+    min-height: 105px;
+
+    padding:
+        15px
+        17px;
+
+    border-radius: 15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(24, 82, 145, 0.55),
+            rgba(10, 48, 92, 0.65)
+        );
+
+    border:
+        1px solid
+        rgba(118, 175, 235, 0.5);
+
+    color: #dce9f7;
+
+    font-size: 13.5px;
+
+    line-height: 1.8;
+}
+
+
+.description-title {
+
+    color: #f4cf62;
+
+    font-weight: 500;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        20px
+        20px
+        60px;
+
+    color: #819bb9;
+}
+
+
+.footer-line {
+
+    width: 75%;
+
+    max-width: 700px;
+
+    height: 1px;
+
+    margin:
+        0
+        auto
+        25px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(243, 198, 70, 0.7),
+            transparent
+        );
+}
+
+
+.footer-gold {
+
+    color: #f3ca4d;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .portfolio {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding:
+            50px
+            15px
+            40px;
+    }
+
+
+    .welcome {
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .welcome::before,
+    .welcome::after {
+
+        width: 25px;
+
+        margin: 0 7px;
+    }
+
+
+    h1 {
+
+        font-size: 39px;
+    }
+
+
+    .name {
+
+        font-size: 23px;
+    }
+
+
+    .subtitle {
+
+        font-size: 15px;
+    }
+
+
+    .quote {
+
+        font-size: 13px;
+    }
+
+
+    .portfolio {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .container {
+
+        width: 94%;
+    }
+
+
+    .content {
+
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONE
+========================================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+
+        font-size: 34px;
+    }
+
+
+    .content h3 {
+
+        font-size: 21px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+                     HEADER
+================================================== -->
+
+<header>
+
+    <div class="welcome">
+        WELCOME TO MY PORTFOLIO
+    </div>
+
+
+    <h1>
+        แฟ้มสะสมผลงานด้านจิตอาสา
+    </h1>
+
+
+    <div class="name">
+        นายวรวัฒน์ เกษร
+    </div>
+
+
+    <div class="subtitle">
+        VOLUNTEER ACTIVITIES
+    </div>
+
+
+    <div class="gold-line"></div>
+
+
+    <p class="quote">
+        “การให้เวลาและความสามารถของเรา
+        เพื่อสร้างสิ่งดี ๆ ให้กับผู้อื่น”
+    </p>
+
+</header>
+
+
+
+<!-- ==================================================
+                     MAIN
+================================================== -->
+
+<main class="container">
+
+
+    <div class="section-title">
+
+        <h2>
+            ผลงานจิตอาสา
+            <span>3 รายการ</span>
+        </h2>
+
+        <p>
+            VOLUNTEER • COMMUNITY • EXPERIENCE
+        </p>
+
+    </div>
+
+
+
+    <div class="portfolio">
+
+
+        <!-- ==========================================
+                         WORK 01
+        =========================================== -->
+
+        <article class="card">
+
+            <div class="number">
+                01
+            </div>
+
+
+            <div class="a4-image">
+
+                <!--
+                    เปลี่ยน work1.jpg
+                    เป็นรูปผลงานของคุณ
+                -->
+
+                <img
+                    src="images/volunteer1.jpg"
+                    alt="กิจกรรมจิตอาสาที่ 1">
+
+            </div>
+
+
+            <div class="content">
+
+                <div class="icon">
+                    🤝
+                </div>
+
+
+                <h3>
+                    กิจกรรมจิตอาสา
+                </h3>
+
+
+                <div class="english">
+                    VOLUNTEER ACTIVITY
+                </div>
+
+
+                <div class="description">
+
+                    <div class="description-title">
+                        ✦ คำอธิบายผลงาน
+                    </div>
+
+                    เขียนรายละเอียดกิจกรรมจิตอาสา
+                    และหน้าที่ที่ได้รับมอบหมาย
+                    พร้อมสิ่งที่ได้เรียนรู้จากกิจกรรมนี้
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==========================================
+                         WORK 02
+        =========================================== -->
+
+        <article class="card">
+
+            <div class="number">
+                02
+            </div>
+
+
+            <div class="a4-image">
+
+                <img
+                    src="images/volunteer2.jpg"
+                    alt="กิจกรรมจิตอาสาที่ 2">
+
+            </div>
+
+
+            <div class="content">
+
+                <div class="icon">
+                    🌱
+                </div>
+
+
+                <h3>
+                    กิจกรรมเพื่อชุมชน
+                </h3>
+
+
+                <div class="english">
+                    COMMUNITY SERVICE
+                </div>
+
+
+                <div class="description">
+
+                    <div class="description-title">
+                        ✦ คำอธิบายผลงาน
+                    </div>
+
+                    เขียนรายละเอียดการมีส่วนร่วม
+                    ในกิจกรรมเพื่อชุมชนและสังคม
+                    รวมถึงประสบการณ์ที่ได้รับจากการทำงานร่วมกัน
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==========================================
+                         WORK 03
+        =========================================== -->
+
+        <article class="card">
+
+            <div class="number">
+                03
+            </div>
+
+
+            <div class="a4-image">
+
+                <img
+                    src="images/volunteer3.jpg"
+                    alt="กิจกรรมจิตอาสาที่ 3">
+
+            </div>
+
+
+            <div class="content">
+
+                <div class="icon">
+                    ❤️
+                </div>
+
+
+                <h3>
+                    การช่วยเหลือสังคม
+                </h3>
+
+
+                <div class="english">
+                    SOCIAL CONTRIBUTION
+                </div>
+
+
+                <div class="description">
+
+                    <div class="description-title">
+                        ✦ คำอธิบายผลงาน
+                    </div>
+
+                    เขียนรายละเอียดกิจกรรมที่ได้ช่วยเหลือผู้อื่น
+                    บทบาทของตนเองในกิจกรรม
+                    และความประทับใจที่ได้รับ
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- ==================================================
+                     FOOTER
+================================================== -->
+
+<footer>
+
+    <div class="footer-line"></div>
+
+
+    <div class="footer-gold">
+        VOLUNTEER PORTFOLIO • 2026
+    </div>
+
+
+    <div>
+        MAKING A DIFFERENCE THROUGH ACTION
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

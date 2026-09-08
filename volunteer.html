@@ -1,753 +1,462 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Volunteer Portfolio</title>
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>Volunteer Portfolio | วรวัฒน์ เกษร</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
-<!-- ================= FONT ================= -->
+    <style>
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet">
+        body {
+            font-family: "Prompt", sans-serif;
 
+            color: white;
 
-<!-- ================= CSS ================= -->
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(20, 76, 130, 0.35),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #021632,
+                    #082d5d,
+                    #020d20
+                );
 
-<style>
+            min-height: 100vh;
+        }
 
-/* =========================================
-   RESET
-========================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* ================= HEADER ================= */
 
+        header {
 
-/* =========================================
-   BODY
-========================================= */
+            position: relative;
 
-body {
+            text-align: center;
 
-    font-family: "Prompt", sans-serif;
+            padding: 80px 20px 60px;
 
-    color: white;
+            border-bottom:
+                1px solid
+                rgba(243, 200, 75, 0.35);
+        }
 
-    min-height: 100vh;
 
-    overflow-x: hidden;
+        /* ================= BACK BUTTON ================= */
 
-    background:
+        .back-button {
 
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(37, 91, 165, 0.45),
-            transparent 30%
-        ),
+            position: absolute;
 
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(244, 199, 71, 0.14),
-            transparent 28%
-        ),
+            top: 25px;
+            left: 30px;
 
-        linear-gradient(
-            135deg,
-            #021632,
-            #082d5d 50%,
-            #020d20
-        );
-}
+            display: inline-block;
 
+            padding: 12px 22px;
 
-/* =========================================
-   BACKGROUND LIGHT
-========================================= */
+            background: #f3c84b;
 
-body::before {
+            color: #06234a;
 
-    content: "";
+            border:
+                2px solid
+                #f3c84b;
 
-    position: fixed;
+            border-radius: 12px;
 
-    width: 500px;
-    height: 500px;
+            text-decoration: none;
 
-    border-radius: 50%;
+            font-family: "Prompt", sans-serif;
 
-    background:
-        rgba(61, 128, 218, 0.08);
+            font-size: 15px;
 
-    filter: blur(90px);
+            font-weight: 500;
 
-    top: -220px;
-    left: -180px;
+            z-index: 9999;
 
-    pointer-events: none;
-}
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.3);
 
+            transition: 0.3s ease;
+        }
 
-body::after {
 
-    content: "";
+        .back-button:hover {
 
-    position: fixed;
+            background: transparent;
 
-    width: 450px;
-    height: 450px;
+            color: #f3c84b;
 
-    border-radius: 50%;
+            transform: translateX(-4px);
 
-    background:
-        rgba(255, 205, 74, 0.06);
+            box-shadow:
+                0 5px 20px
+                rgba(243, 200, 75, 0.25);
+        }
 
-    filter: blur(100px);
 
-    right: -200px;
-    bottom: -180px;
+        /* ================= HEADER TEXT ================= */
 
-    pointer-events: none;
-}
+        .small-title {
 
+            font-size: 14px;
 
-/* =========================================
-   HEADER
-========================================= */
+            letter-spacing: 4px;
 
-header {
+            color: #f3c84b;
 
-    text-align: center;
+            margin-bottom: 15px;
+        }
 
-    padding:
-        75px
-        20px
-        55px;
 
-    position: relative;
-}
+        header h1 {
 
+            font-family: "Kanit", sans-serif;
 
-.welcome {
+            font-size: 42px;
 
-    color: #f4ca4d;
+            font-weight: 500;
 
-    font-size: 17px;
+            margin-bottom: 12px;
+        }
 
-    font-weight: 500;
 
-    letter-spacing: 5px;
+        header p {
 
-    margin-bottom: 22px;
-}
+            font-size: 16px;
 
+            color: #d7e3f3;
 
-.welcome::before,
-.welcome::after {
+            font-weight: 300;
+        }
 
-    content: "";
 
-    display: inline-block;
+        .quote {
 
-    width: 70px;
+            margin-top: 25px;
 
-    height: 2px;
+            color: #f3c84b;
 
-    vertical-align: middle;
+            font-size: 17px;
 
-    margin: 0 15px;
+            font-weight: 300;
+        }
 
-    background:
 
-        linear-gradient(
-            90deg,
-            transparent,
-            #f3c84b
-        );
-}
+        /* ================= MAIN ================= */
 
+        main {
 
-h1 {
+            width: 92%;
 
-    font-family: "Kanit", sans-serif;
+            max-width: 1200px;
 
-    font-size:
-        clamp(42px, 6vw, 76px);
+            margin: auto;
 
-    line-height: 1.1;
+            padding: 65px 0;
+        }
 
-    font-weight: 700;
 
-    background:
+        /* ================= SECTION TITLE ================= */
 
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #f6d567,
-            #ffffff
-        );
+        .section-title {
 
-    -webkit-background-clip: text;
+            text-align: center;
 
-    color: transparent;
+            margin-bottom: 45px;
+        }
 
-    text-shadow:
-        0 0 30px
-        rgba(255, 208, 70, 0.15);
-}
 
+        .section-title h2 {
 
-.name {
+            font-family: "Kanit", sans-serif;
 
-    margin-top: 22px;
+            font-size: 30px;
 
-    font-family: "Kanit", sans-serif;
+            font-weight: 500;
 
-    font-size: 28px;
+            margin-bottom: 10px;
+        }
 
-    color: #ffffff;
-}
 
+        .section-title p {
 
-.subtitle {
+            color: #b9cbe0;
 
-    margin-top: 5px;
+            font-size: 14px;
+        }
 
-    color: #f4ca4d;
 
-    font-size: 18px;
+        /* ================= PORTFOLIO GRID ================= */
 
-    letter-spacing: 2px;
+        .portfolio-grid {
 
-    font-weight: 500;
-}
+            display: grid;
 
+            grid-template-columns:
+                repeat(3, 1fr);
 
-.gold-line {
+            gap: 30px;
+        }
 
-    width: 180px;
 
-    height: 3px;
+        /* ================= CARD ================= */
 
-    margin:
-        28px
-        auto;
+        .card {
 
-    background:
+            background:
+                rgba(4, 28, 58, 0.75);
 
-        linear-gradient(
-            90deg,
-            transparent,
-            #f3c84b,
-            transparent
-        );
-}
+            border:
+                1px solid
+                rgba(243, 200, 75, 0.35);
 
+            border-radius: 22px;
 
-.quote {
+            overflow: hidden;
 
-    color: #b9cbe2;
+            box-shadow:
+                0 15px 45px
+                rgba(0, 0, 0, 0.25);
 
-    font-size: 16px;
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
 
-    line-height: 1.8;
 
-    max-width: 750px;
+        .card:hover {
 
-    margin: auto;
-}
+            transform: translateY(-8px);
 
+            border-color: #f3c84b;
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.4);
+        }
 
-.container {
 
-    width:
-        min(
-            1100px,
-            92%
-        );
+        /* ================= A4 IMAGE ================= */
 
-    margin: auto;
+        .a4-image {
 
-    padding-bottom: 80px;
-}
+            width: 100%;
 
+            aspect-ratio: 210 / 297;
 
-/* =========================================
-   SECTION TITLE
-========================================= */
+            background: white;
 
-.section-title {
+            overflow: hidden;
 
-    text-align: center;
+            position: relative;
+        }
 
-    margin-bottom: 40px;
-}
 
+        .a4-image img {
 
-.section-title h2 {
+            width: 100%;
 
-    font-family: "Kanit", sans-serif;
+            height: 100%;
 
-    font-size: 34px;
+            object-fit: contain;
 
-    font-weight: 600;
-}
+            display: block;
 
+            background: white;
 
-.section-title h2 span {
+            transition:
+                transform 0.5s ease;
+        }
 
-    color: #f4ca4d;
-}
 
+        .card:hover .a4-image img {
 
-.section-title p {
+            transform: scale(1.02);
+        }
 
-    margin-top: 8px;
 
-    color: #9fb6d3;
+        /* ================= DESCRIPTION ================= */
 
-    font-size: 14px;
+        .content {
 
-    letter-spacing: 1px;
-}
+            padding: 24px;
+        }
 
 
-/* =========================================
-   PORTFOLIO GRID
-========================================= */
+        .number {
 
-.portfolio {
+            display: inline-block;
 
-    display: grid;
+            color: #f3c84b;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+            font-size: 13px;
 
-    gap: 30px;
-}
+            letter-spacing: 2px;
 
+            margin-bottom: 8px;
+        }
 
-/* =========================================
-   CARD
-========================================= */
 
-.card {
+        .content h3 {
 
-    position: relative;
+            font-family: "Kanit", sans-serif;
 
-    overflow: hidden;
+            font-size: 22px;
 
-    border-radius: 22px;
+            font-weight: 500;
 
-    background:
+            margin-bottom: 10px;
+        }
 
-        linear-gradient(
-            145deg,
-            rgba(15, 55, 103, 0.97),
-            rgba(2, 20, 45, 0.98)
-        );
 
-    border:
-        1px solid
-        rgba(243, 198, 70, 0.68);
+        .content p {
 
-    box-shadow:
+            color: #c8d7e8;
 
-        0 20px 45px
-        rgba(0, 0, 0, 0.35),
+            font-size: 14px;
 
-        0 0 20px
-        rgba(243, 198, 70, 0.05);
+            line-height: 1.8;
 
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
+            font-weight: 300;
 
+            min-height: 50px;
+        }
 
-.card:hover {
 
-    transform:
-        translateY(-10px);
+        /* ================= FOOTER ================= */
 
-    box-shadow:
+        footer {
 
-        0 30px 60px
-        rgba(0, 0, 0, 0.55),
+            text-align: center;
 
-        0 0 35px
-        rgba(243, 198, 70, 0.18);
-}
+            padding: 30px 20px 40px;
 
+            border-top:
+                1px solid
+                rgba(243, 200, 75, 0.2);
 
-/* =========================================
-   NUMBER
-========================================= */
+            color: #8fa6c1;
 
-.number {
+            font-size: 12px;
 
-    position: absolute;
+            letter-spacing: 1px;
+        }
 
-    z-index: 10;
 
-    top: 15px;
-    left: 15px;
+        /* ================= TABLET ================= */
 
-    width: 55px;
-    height: 55px;
+        @media (max-width: 900px) {
 
-    display: flex;
+            .portfolio-grid {
 
-    align-items: center;
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
 
-    justify-content: center;
+        }
 
-    border-radius: 15px;
 
-    color: #09264c;
+        /* ================= MOBILE ================= */
 
-    font-size: 21px;
+        @media (max-width: 600px) {
 
-    font-weight: 700;
+            header {
 
-    background:
+                padding:
+                    35px 20px 45px;
+            }
 
-        linear-gradient(
-            135deg,
-            #ffe68b,
-            #d9aa2e
-        );
 
-    box-shadow:
+            /* ปุ่มกลับบนมือถือ */
 
-        0 7px 20px
-        rgba(0, 0, 0, 0.4);
-}
+            .back-button {
 
+                position: relative;
 
-/* =========================================
-   A4 IMAGE
-========================================= */
+                top: auto;
 
-.a4-image {
+                left: auto;
 
-    width: 100%;
+                display: inline-block;
 
-    /*
-       กระดาษ A4 แนวตั้ง
-       210 × 297
-    */
+                margin-bottom: 30px;
+            }
 
-    aspect-ratio:
-        210 / 297;
 
-    background: white;
+            header h1 {
 
-    overflow: hidden;
+                font-size: 32px;
+            }
 
-    position: relative;
-}
 
+            .small-title {
 
-.a4-image img {
+                font-size: 12px;
 
-    width: 100%;
+                letter-spacing: 3px;
+            }
 
-    height: 100%;
 
-    /*
-       แสดงภาพ A4 ทั้งหน้า
-       ไม่ตัดขอบ
-    */
+            .quote {
 
-    object-fit: contain;
+                font-size: 15px;
 
-    display: block;
+                line-height: 1.7;
+            }
 
-    background: white;
 
-    transition:
-        transform 0.5s ease;
-}
+            main {
 
+                width: 90%;
 
-.card:hover
-.a4-image img {
+                padding: 45px 0;
+            }
 
-    transform:
-        scale(1.025);
-}
 
+            .section-title h2 {
 
-/* =========================================
-   CONTENT
-========================================= */
+                font-size: 26px;
+            }
 
-.content {
 
-    padding: 24px;
-}
+            .portfolio-grid {
 
+                grid-template-columns: 1fr;
 
-.icon {
+                gap: 25px;
+            }
 
-    font-size: 36px;
 
-    margin-bottom: 6px;
-}
+            .content {
 
+                padding: 20px;
+            }
 
-.content h3 {
+        }
 
-    font-family: "Kanit", sans-serif;
-
-    font-size: 24px;
-
-    font-weight: 600;
-}
-
-
-.english {
-
-    color: #f4ca4d;
-
-    font-size: 13px;
-
-    letter-spacing: 1.5px;
-
-    margin-top: 2px;
-
-    margin-bottom: 17px;
-}
-
-
-/* =========================================
-   DESCRIPTION BOX
-========================================= */
-
-.description {
-
-    min-height: 105px;
-
-    padding:
-        15px
-        17px;
-
-    border-radius: 15px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(24, 82, 145, 0.55),
-            rgba(10, 48, 92, 0.65)
-        );
-
-    border:
-        1px solid
-        rgba(118, 175, 235, 0.5);
-
-    color: #dce9f7;
-
-    font-size: 13.5px;
-
-    line-height: 1.8;
-}
-
-
-.description-title {
-
-    color: #f4cf62;
-
-    font-weight: 500;
-
-    margin-bottom: 5px;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer {
-
-    text-align: center;
-
-    padding:
-        20px
-        20px
-        60px;
-
-    color: #819bb9;
-}
-
-
-.footer-line {
-
-    width: 75%;
-
-    max-width: 700px;
-
-    height: 1px;
-
-    margin:
-        0
-        auto
-        25px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(243, 198, 70, 0.7),
-            transparent
-        );
-}
-
-
-.footer-gold {
-
-    color: #f3ca4d;
-
-    letter-spacing: 4px;
-
-    font-size: 13px;
-
-    margin-bottom: 8px;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-    .portfolio {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    header {
-
-        padding:
-            50px
-            15px
-            40px;
-    }
-
-
-    .welcome {
-
-        font-size: 12px;
-
-        letter-spacing: 3px;
-    }
-
-
-    .welcome::before,
-    .welcome::after {
-
-        width: 25px;
-
-        margin: 0 7px;
-    }
-
-
-    h1 {
-
-        font-size: 39px;
-    }
-
-
-    .name {
-
-        font-size: 23px;
-    }
-
-
-    .subtitle {
-
-        font-size: 15px;
-    }
-
-
-    .quote {
-
-        font-size: 13px;
-    }
-
-
-    .portfolio {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .container {
-
-        width: 94%;
-    }
-
-
-    .content {
-
-        padding: 20px;
-    }
-
-}
-
-
-/* =========================================
-   SMALL PHONE
-========================================= */
-
-@media (max-width: 380px) {
-
-    h1 {
-
-        font-size: 34px;
-    }
-
-
-    .content h3 {
-
-        font-size: 21px;
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -755,263 +464,197 @@ footer {
 <body>
 
 
-<!-- ==================================================
-                     HEADER
-================================================== -->
+    <!-- ================= HEADER ================= -->
 
-<header>
-
-    <div class="welcome">
-        WELCOME TO MY PORTFOLIO
-    </div>
+    <header>
 
 
-    <h1>
-        แฟ้มสะสมผลงานด้านจิตอาสา
-    </h1>
+        <!-- ปุ่มกลับหน้า Portfolio -->
+
+        <a href="portfolio.html" class="back-button">
+            ← กลับหน้า Portfolio
+        </a>
 
 
-    <div class="name">
-        นายวรวัฒน์ เกษร
-    </div>
+        <div class="small-title">
+            VOLUNTEER ACTIVITIES
+        </div>
 
 
-    <div class="subtitle">
-        VOLUNTEER ACTIVITIES
-    </div>
+        <h1>
+            แฟ้มสะสมผลงานด้านจิตอาสา
+        </h1>
 
-
-    <div class="gold-line"></div>
-
-
-    <p class="quote">
-        “การให้เวลาและความสามารถของเรา
-        เพื่อสร้างสิ่งดี ๆ ให้กับผู้อื่น”
-    </p>
-
-</header>
-
-
-
-<!-- ==================================================
-                     MAIN
-================================================== -->
-
-<main class="container">
-
-
-    <div class="section-title">
-
-        <h2>
-            ผลงานจิตอาสา
-            <span>3 รายการ</span>
-        </h2>
 
         <p>
-            VOLUNTEER • COMMUNITY • EXPERIENCE
+            นายวรวัฒน์ เกษร
         </p>
 
-    </div>
+
+        <div class="quote">
+            “การให้เวลาและความสามารถของเรา เพื่อสร้างสิ่งดี ๆ ให้กับผู้อื่น”
+        </div>
+
+
+    </header>
 
 
 
-    <div class="portfolio">
+    <!-- ================= MAIN ================= -->
+
+    <main>
 
 
-        <!-- ==========================================
-                         WORK 01
-        =========================================== -->
+        <div class="section-title">
 
-        <article class="card">
+            <h2>
+                ผลงานจิตอาสา 3 รายการ
+            </h2>
 
-            <div class="number">
-                01
-            </div>
+            <p>
+                กิจกรรมที่สะท้อนถึงการมีส่วนร่วม ความรับผิดชอบ และการช่วยเหลือสังคม
+            </p>
 
-
-            <div class="a4-image">
-
-                <!--
-                    เปลี่ยน work1.jpg
-                    เป็นรูปผลงานของคุณ
-                -->
-
-                <img
-                    src="images/volunteer1.jpg"
-                    alt="กิจกรรมจิตอาสาที่ 1">
-
-            </div>
+        </div>
 
 
-            <div class="content">
 
-                <div class="icon">
-                    🤝
-                </div>
+        <div class="portfolio-grid">
 
 
-                <h3>
-                    กิจกรรมจิตอาสา
-                </h3>
+            <!-- ================= WORK 1 ================= -->
+
+            <div class="card">
 
 
-                <div class="english">
-                    VOLUNTEER ACTIVITY
-                </div>
+                <div class="a4-image">
 
-
-                <div class="description">
-
-                    <div class="description-title">
-                        ✦ คำอธิบายผลงาน
-                    </div>
-
-                    เขียนรายละเอียดกิจกรรมจิตอาสา
-                    และหน้าที่ที่ได้รับมอบหมาย
-                    พร้อมสิ่งที่ได้เรียนรู้จากกิจกรรมนี้
+                    <img
+                        src="images/volunteer1.jpg"
+                        alt="ผลงานจิตอาสาที่ 1"
+                    >
 
                 </div>
 
-            </div>
 
-        </article>
+                <div class="content">
 
-
-
-        <!-- ==========================================
-                         WORK 02
-        =========================================== -->
-
-        <article class="card">
-
-            <div class="number">
-                02
-            </div>
+                    <span class="number">
+                        VOLUNTEER 01
+                    </span>
 
 
-            <div class="a4-image">
+                    <h3>
+                        กิจกรรมจิตอาสา 01
+                    </h3>
 
-                <img
-                    src="images/volunteer2.jpg"
-                    alt="กิจกรรมจิตอาสาที่ 2">
+
+                    <p>
+                        เข้าร่วมกิจกรรมจิตอาสาเพื่อช่วยเหลือและสร้างประโยชน์ให้กับส่วนรวม
+                        พร้อมเรียนรู้การทำงานร่วมกับผู้อื่น
+                    </p>
+
+                </div>
+
 
             </div>
 
 
-            <div class="content">
 
-                <div class="icon">
-                    🌱
-                </div>
+            <!-- ================= WORK 2 ================= -->
 
-
-                <h3>
-                    กิจกรรมเพื่อชุมชน
-                </h3>
+            <div class="card">
 
 
-                <div class="english">
-                    COMMUNITY SERVICE
-                </div>
+                <div class="a4-image">
 
-
-                <div class="description">
-
-                    <div class="description-title">
-                        ✦ คำอธิบายผลงาน
-                    </div>
-
-                    เขียนรายละเอียดการมีส่วนร่วม
-                    ในกิจกรรมเพื่อชุมชนและสังคม
-                    รวมถึงประสบการณ์ที่ได้รับจากการทำงานร่วมกัน
+                    <img
+                        src="images/volunteer2.jpg"
+                        alt="ผลงานจิตอาสาที่ 2"
+                    >
 
                 </div>
 
-            </div>
 
-        </article>
+                <div class="content">
 
-
-
-        <!-- ==========================================
-                         WORK 03
-        =========================================== -->
-
-        <article class="card">
-
-            <div class="number">
-                03
-            </div>
+                    <span class="number">
+                        VOLUNTEER 02
+                    </span>
 
 
-            <div class="a4-image">
+                    <h3>
+                        กิจกรรมจิตอาสา 02
+                    </h3>
 
-                <img
-                    src="images/volunteer3.jpg"
-                    alt="กิจกรรมจิตอาสาที่ 3">
+
+                    <p>
+                        มีส่วนร่วมในการทำกิจกรรมเพื่อสังคม
+                        ฝึกความรับผิดชอบและการทำงานอย่างเป็นระบบ
+                    </p>
+
+                </div>
+
 
             </div>
 
 
-            <div class="content">
 
-                <div class="icon">
-                    ❤️
-                </div>
+            <!-- ================= WORK 3 ================= -->
 
-
-                <h3>
-                    การช่วยเหลือสังคม
-                </h3>
+            <div class="card">
 
 
-                <div class="english">
-                    SOCIAL CONTRIBUTION
-                </div>
+                <div class="a4-image">
 
-
-                <div class="description">
-
-                    <div class="description-title">
-                        ✦ คำอธิบายผลงาน
-                    </div>
-
-                    เขียนรายละเอียดกิจกรรมที่ได้ช่วยเหลือผู้อื่น
-                    บทบาทของตนเองในกิจกรรม
-                    และความประทับใจที่ได้รับ
+                    <img
+                        src="images/volunteer3.jpg"
+                        alt="ผลงานจิตอาสาที่ 3"
+                    >
 
                 </div>
+
+
+                <div class="content">
+
+                    <span class="number">
+                        VOLUNTEER 03
+                    </span>
+
+
+                    <h3>
+                        กิจกรรมจิตอาสา 03
+                    </h3>
+
+
+                    <p>
+                        ร่วมทำกิจกรรมที่เป็นประโยชน์ต่อชุมชน
+                        พร้อมนำทักษะและความสามารถของตนเองมาช่วยเหลือผู้อื่น
+                    </p>
+
+                </div>
+
 
             </div>
 
-        </article>
 
+        </div>
 
-    </div>
-
-</main>
+    </main>
 
 
 
-<!-- ==================================================
-                     FOOTER
-================================================== -->
+    <!-- ================= FOOTER ================= -->
 
-<footer>
+    <footer>
 
-    <div class="footer-line"></div>
-
-
-    <div class="footer-gold">
         VOLUNTEER PORTFOLIO • 2026
-    </div>
 
+        <br>
 
-    <div>
         MAKING A DIFFERENCE THROUGH ACTION
-    </div>
 
-</footer>
+    </footer>
 
 
 </body>

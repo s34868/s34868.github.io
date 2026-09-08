@@ -1174,17 +1174,71 @@ h1 {
      BUTTON
 ================================================= -->
 
+```html
+<!-- =================================================
+     BACK TO PORTFOLIO BUTTON
+================================================= -->
+
 <div class="buttons">
 
-    <a
-        href="portfolio.html"
-        class="back-button">
-
-        ← กลับไปหน้าแฟ้มสะสมผลงาน
-
+    <a href="portfolio.html" class="back-button">
+        ← กลับไปหน้า Portfolio
     </a>
 
 </div>
+```
+
+และใส่ CSS นี้ไว้ใน `<style>`:
+
+```css
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 35px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #003b73,
+        #0066b3
+    );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+
+    transition: all 0.35s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-4px);
+
+    color: #ffe082;
+
+    border-color: #ffe082;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4),
+        0 0 18px rgba(255, 224, 130, 0.2);
+}
+```
 
 
 

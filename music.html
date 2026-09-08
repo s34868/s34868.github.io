@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Music Portfolio | วรวัฒน์ เกษร</title>
+
+<!-- ฟอนต์ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(40,90,160,0.35), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(212,166,54,0.18), transparent 25%),
+        linear-gradient(135deg, #031b3d, #082b5c 50%, #020f25);
+    color: white;
+    min-height: 100vh;
+}
+
+/* เส้นแสงด้านบน */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(238,193,72,0.5),
+        transparent
+    );
+    top: 120px;
+    left: 0;
+    pointer-events: none;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 75px 20px 45px;
+    position: relative;
+}
+
+.small-title {
+    color: #f3c84b;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.small-title::before,
+.small-title::after {
+    content: "";
+    display: inline-block;
+    width: 65px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #f3c84b);
+    vertical-align: middle;
+    margin: 0 18px;
+}
+
+h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.1;
+    font-weight: 700;
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #f6d76d,
+        #ffffff
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 35px rgba(255,205,75,0.15);
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: 21px;
+    color: #d8e4f5;
+}
+
+.subtitle span {
+    color: #f4ca4d;
+    font-weight: 600;
+}
+
+.quote {
+    margin: 25px auto 0;
+    max-width: 700px;
+    color: #b9cbe2;
+    font-size: 16px;
+}
+
+/* เส้นทอง */
+
+.gold-line {
+    width: 170px;
+    height: 3px;
+    margin: 30px auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #f3c84b,
+        transparent
+    );
+}
+
+/* PORTFOLIO GRID */
+
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding-bottom: 80px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* CARD */
+
+.card {
+    position: relative;
+    background: linear-gradient(
+        145deg,
+        rgba(16,55,101,0.92),
+        rgba(3,24,55,0.96)
+    );
+
+    border: 1px solid rgba(242,196,65,0.7);
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 20px rgba(242,196,65,0.06);
+
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #f5cf59;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.5),
+        0 0 30px rgba(242,196,65,0.18);
+}
+
+/* NUMBER */
+
+.number {
+    position: absolute;
+    z-index: 5;
+    top: 15px;
+    left: 15px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #ffe27a,
+        #dba928
+    );
+
+    color: #08234a;
+    font-size: 21px;
+    font-weight: 700;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+}
+
+/* IMAGE */
+
+.image-box {
+    width: 100%;
+    height: 235px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(2,15,35,0.8)
+        );
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.card:hover .image-box img {
+    transform: scale(1.08);
+}
+
+/* CONTENT */
+
+.card-content {
+    padding: 24px;
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.card h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 23px;
+    margin-bottom: 2px;
+}
+
+.english {
+    color: #f4c84d;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+/* DESCRIPTION BOX */
+
+.description {
+    min-height: 105px;
+
+    background: rgba(19,71,128,0.55);
+
+    border: 1px solid rgba(120,174,232,0.55);
+
+    border-radius: 15px;
+
+    padding: 15px 17px;
+
+    color: #dce9f7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.description-title {
+    color: #f4cf62;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px 20px 55px;
+    color: #8fa9c7;
+}
+
+.footer-line {
+    width: 80%;
+    max-width: 700px;
+    height: 1px;
+    margin: 0 auto 25px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(239,194,70,0.7),
+        transparent
+    );
+}
+
+.footer-title {
+    color: #f1c84d;
+    letter-spacing: 4px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 50px;
+    }
+
+    .small-title {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
+    .small-title::before,
+    .small-title::after {
+        width: 25px;
+        margin: 0 8px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-box {
+        height: 220px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="small-title">
+        WELCOME TO MY PORTFOLIO
+    </div>
+
+    <h1>
+        แฟ้มสะสมผลงานด้านดนตรี
+    </h1>
+
+    <div class="subtitle">
+        นายวรวัฒน์ เกษร
+        <br>
+        <span>COLLEGE OF MUSIC</span>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <p class="quote">
+        “เสียงดนตรี คือภาษาที่ผมใช้สื่อสารกับโลก”
+    </p>
+
+</header>
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<main class="container">
+
+<div class="portfolio-grid">
+
+
+<!-- 01 -->
+
+<div class="card">
+
+    <div class="number">01</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1000&q=80"
+        alt="การแสดงดนตรีสด">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🎸</div>
+
+        <h2>การแสดงดนตรีสด</h2>
+
+        <div class="english">
+            LIVE PERFORMANCE
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            การแสดงดนตรีของคุณ เช่น
+            เวทีที่เคยแสดง บทบาท และสิ่งที่ได้เรียนรู้
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="card">
+
+    <div class="number">02</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1000&q=80"
+        alt="การแต่งเพลงและเรียบเรียงดนตรี">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🎼</div>
+
+        <h2>การแต่งเพลง / เรียบเรียง</h2>
+
+        <div class="english">
+            SONGWRITING & ARRANGEMENT
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            เพลงที่แต่งหรือเรียบเรียง เช่น
+            แนวคิด กระบวนการทำงาน และจุดเด่นของผลงาน
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="card">
+
+    <div class="number">03</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1000&q=80"
+        alt="ทฤษฎีดนตรี">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🎹</div>
+
+        <h2>ทฤษฎีดนตรีและการอ่านโน้ต</h2>
+
+        <div class="english">
+            MUSIC THEORY & SIGHT-READING
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            ความรู้ด้านทฤษฎีดนตรี การอ่านโน้ต
+            หรือทักษะทางดนตรีที่กำลังพัฒนา
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="card">
+
+    <div class="number">04</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=80"
+        alt="เอฟเฟกต์และอุปกรณ์ดนตรี">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🎛️</div>
+
+        <h2>เอฟเฟกต์และอุปกรณ์ดนตรี</h2>
+
+        <div class="english">
+            EFFECTS & EQUIPMENT
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            อุปกรณ์ที่ใช้ เทคนิคการปรับเสียง
+            หรือการออกแบบซาวด์สำหรับการแสดง
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 05 -->
+
+<div class="card">
+
+    <div class="number">05</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1000&q=80"
+        alt="โครงงานสร้างสรรค์ทางดนตรี">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🎵</div>
+
+        <h2>โครงงานสร้างสรรค์</h2>
+
+        <div class="english">
+            CREATIVE MUSIC PROJECT
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            โครงงาน เช่น วัตถุประสงค์
+            กระบวนการทำงาน และสิ่งที่ภาคภูมิใจ
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 06 -->
+
+<div class="card">
+
+    <div class="number">06</div>
+
+    <div class="image-box">
+        <img
+        src="https://images.unsplash.com/photo-1524650359799-842906ca1c06?auto=format&fit=crop&w=1000&q=80"
+        alt="กิจกรรมและรางวัล">
+    </div>
+
+    <div class="card-content">
+
+        <div class="icon">🏆</div>
+
+        <h2>กิจกรรม / รางวัล / เกียรติบัตร</h2>
+
+        <div class="english">
+            ACTIVITIES & ACHIEVEMENTS
+        </div>
+
+        <div class="description">
+
+            <div class="description-title">
+                ✦ คำอธิบายผลงาน
+            </div>
+
+            เขียนอธิบาย 2–3 บรรทัดเกี่ยวกับ
+            กิจกรรม รางวัล หรือเกียรติบัตร
+            รวมถึงประสบการณ์ที่ได้รับจากกิจกรรมนั้น
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-title">
+        MUSIC PORTFOLIO • 2026
+    </div>
+
+    <p style="margin-top:10px;">
+        MUSIC BUILDS A BETTER TOMORROW
+    </p>
+
+</footer>
+
+</body>
+</html>

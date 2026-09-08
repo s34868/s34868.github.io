@@ -218,17 +218,22 @@ h1 {
         );
 }
 
+.image-box {
+    width: 100%;
+    aspect-ratio: 210 / 297; /* อัตราส่วนกระดาษ A4 */
+    overflow: hidden;
+    position: relative;
+    background: #ffffff;
+}
+
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-
-    transition: 0.5s ease;
+    object-fit: contain; /* เห็น A4 ทั้งแผ่น ไม่ตัดขอบ */
+    display: block;
+    background: white;
 }
 
-.card:hover .image-box img {
-    transform: scale(1.08);
-}
 
 /* CONTENT */
 

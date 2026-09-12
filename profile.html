@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ประวัติส่วนตัว | Portfolio</title>
+    <title>ประวัติส่วนตัว | แฟ้มสะสมผลงาน</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,11 +13,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
+
     <style>
 
-        /* =========================
+        /* =====================================
            RESET
-        ========================= */
+        ===================================== */
 
         * {
             margin: 0;
@@ -29,12 +30,17 @@
             scroll-behavior: smooth;
         }
 
+
+        /* =====================================
+           BODY
+        ===================================== */
+
         body {
             min-height: 100vh;
 
             font-family: 'Kanit', sans-serif;
 
-            color: white;
+            color: #ffffff;
 
             background:
                 radial-gradient(
@@ -53,9 +59,9 @@
         }
 
 
-        /* =========================
+        /* =====================================
            BACKGROUND LIGHT
-        ========================= */
+        ===================================== */
 
         body::before {
             content: "";
@@ -76,6 +82,7 @@
 
             pointer-events: none;
         }
+
 
         body::after {
             content: "";
@@ -98,9 +105,9 @@
         }
 
 
-        /* =========================
+        /* =====================================
            MUSIC SYMBOLS
-        ========================= */
+        ===================================== */
 
         .music-symbol {
             position: fixed;
@@ -116,6 +123,7 @@
             z-index: 0;
         }
 
+
         .symbol-1 {
             top: 12%;
             left: 5%;
@@ -125,6 +133,7 @@
             transform: rotate(-12deg);
         }
 
+
         .symbol-2 {
             top: 48%;
             right: 6%;
@@ -133,6 +142,7 @@
 
             transform: rotate(12deg);
         }
+
 
         .symbol-3 {
             bottom: 10%;
@@ -144,9 +154,9 @@
         }
 
 
-        /* =========================
-           MAIN CONTAINER
-        ========================= */
+        /* =====================================
+           CONTAINER
+        ===================================== */
 
         .container {
             position: relative;
@@ -161,15 +171,16 @@
         }
 
 
-        /* =========================
+        /* =====================================
            HEADER
-        ========================= */
+        ===================================== */
 
         .header {
             text-align: center;
 
             margin-bottom: 45px;
         }
+
 
         .small-title {
             color: #d4af37;
@@ -181,6 +192,7 @@
             margin-bottom: 15px;
         }
 
+
         .main-title {
             font-family: 'Playfair Display', serif;
 
@@ -188,15 +200,17 @@
 
             line-height: 1.2;
 
-            color: white;
+            color: #ffffff;
 
             text-shadow:
                 0 5px 25px rgba(0,0,0,0.5);
         }
 
+
         .main-title span {
             color: #d4af37;
         }
+
 
         .gold-line {
             width: 150px;
@@ -219,6 +233,7 @@
                 0 0 15px rgba(212,175,55,0.4);
         }
 
+
         .subtitle {
             color: rgba(255,255,255,0.62);
 
@@ -230,9 +245,9 @@
         }
 
 
-        /* =========================
+        /* =====================================
            PROFILE BOX
-        ========================= */
+        ===================================== */
 
         .profile-box {
 
@@ -264,6 +279,7 @@
             overflow: hidden;
         }
 
+
         .profile-box::before {
 
             content: "";
@@ -288,9 +304,9 @@
         }
 
 
-        /* =========================
-           PHOTO
-        ========================= */
+        /* =====================================
+           PHOTO SECTION
+        ===================================== */
 
         .photo-section {
 
@@ -302,6 +318,11 @@
 
             justify-content: center;
         }
+
+
+        /* =====================================
+           PHOTO FRAME
+        ===================================== */
 
         .photo-frame {
 
@@ -328,22 +349,23 @@
             overflow: hidden;
         }
 
-        .photo-placeholder {
+
+        /* =====================================
+           PROFILE IMAGE
+        ===================================== */
+
+        .profile-image {
 
             width: 100%;
             height: 100%;
 
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+
             border-radius: 12px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
 
             background:
                 linear-gradient(
@@ -351,36 +373,8 @@
                     #09244a,
                     #04152e
                 );
-
-            border: 1px dashed rgba(212,175,55,0.45);
-
-            color: rgba(255,255,255,0.55);
         }
 
-        .camera-icon {
-
-            font-size: 52px;
-
-            color: #d4af37;
-
-            margin-bottom: 12px;
-        }
-
-        .photo-placeholder p {
-
-            font-size: 15px;
-
-            color: rgba(255,255,255,0.65);
-        }
-
-        .photo-placeholder small {
-
-            margin-top: 5px;
-
-            font-size: 12px;
-
-            color: rgba(255,255,255,0.38);
-        }
 
         .photo-caption {
 
@@ -390,13 +384,13 @@
 
             font-size: 13px;
 
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
 
-        /* =========================
+        /* =====================================
            INFORMATION
-        ========================= */
+        ===================================== */
 
         .info-section {
 
@@ -406,6 +400,7 @@
 
             justify-content: center;
         }
+
 
         .info-title {
 
@@ -419,6 +414,7 @@
 
             position: relative;
         }
+
 
         .info-title::after {
 
@@ -436,9 +432,9 @@
         }
 
 
-        /* =========================
-           INFORMATION ROW
-        ========================= */
+        /* =====================================
+           INFORMATION LIST
+        ===================================== */
 
         .info-list {
 
@@ -448,6 +444,7 @@
 
             gap: 17px;
         }
+
 
         .info-row {
 
@@ -469,6 +466,7 @@
             transition: 0.3s ease;
         }
 
+
         .info-row:hover {
 
             background:
@@ -479,6 +477,7 @@
             border-left-color: #d4af37;
         }
 
+
         .info-label {
 
             color: #d4af37;
@@ -487,6 +486,7 @@
 
             font-weight: 500;
         }
+
 
         .info-value {
 
@@ -500,9 +500,9 @@
         }
 
 
-        /* =========================
-           UNIVERSITY HIGHLIGHT
-        ========================= */
+        /* =====================================
+           DREAM UNIVERSITY
+        ===================================== */
 
         .dream-school {
 
@@ -522,6 +522,7 @@
                 );
         }
 
+
         .dream-label {
 
             color: #d4af37;
@@ -533,6 +534,7 @@
             margin-bottom: 7px;
         }
 
+
         .dream-value {
 
             color: #ffffff;
@@ -543,9 +545,9 @@
         }
 
 
-        /* =========================
+        /* =====================================
            BACK BUTTON
-        ========================= */
+        ===================================== */
 
         .back-area {
 
@@ -555,6 +557,7 @@
 
             margin-top: 42px;
         }
+
 
         .back-button {
 
@@ -597,6 +600,7 @@
                 box-shadow 0.3s ease;
         }
 
+
         .back-button:hover {
 
             transform: translateY(-5px);
@@ -610,6 +614,7 @@
                 0 0 20px rgba(212,175,55,0.15);
         }
 
+
         .back-arrow {
 
             font-size: 20px;
@@ -618,9 +623,9 @@
         }
 
 
-        /* =========================
+        /* =====================================
            FOOTER
-        ========================= */
+        ===================================== */
 
         .footer {
 
@@ -635,14 +640,15 @@
             letter-spacing: 1px;
         }
 
+
         .footer span {
             color: #d4af37;
         }
 
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        /* =====================================
+           RESPONSIVE TABLET
+        ===================================== */
 
         @media (max-width: 800px) {
 
@@ -655,6 +661,7 @@
                 padding: 30px 25px;
             }
 
+
             .photo-frame {
 
                 width: 230px;
@@ -662,12 +669,18 @@
                 height: 290px;
             }
 
+
             .info-section {
 
                 width: 100%;
             }
+
         }
 
+
+        /* =====================================
+           RESPONSIVE MOBILE
+        ===================================== */
 
         @media (max-width: 550px) {
 
@@ -677,6 +690,7 @@
                     45px 10px 35px;
             }
 
+
             .profile-box {
 
                 padding: 25px 17px;
@@ -684,15 +698,18 @@
                 border-radius: 17px;
             }
 
+
             .main-title {
 
                 font-size: 38px;
             }
 
+
             .info-title {
 
                 font-size: 26px;
             }
+
 
             .info-row {
 
@@ -703,6 +720,7 @@
                 padding: 13px 15px;
             }
 
+
             .photo-frame {
 
                 width: 210px;
@@ -710,20 +728,26 @@
                 height: 270px;
             }
 
+
             .back-button {
 
                 padding:
                     13px 27px;
             }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- Music decorations -->
+
+    <!-- =====================================
+         MUSIC DECORATION
+    ====================================== -->
 
     <div class="music-symbol symbol-1">♪</div>
 
@@ -732,10 +756,16 @@
     <div class="music-symbol symbol-3">♬</div>
 
 
+    <!-- =====================================
+         MAIN CONTAINER
+    ====================================== -->
+
     <main class="container">
 
 
-        <!-- HEADER -->
+        <!-- =================================
+             HEADER
+        ================================== -->
 
         <header class="header">
 
@@ -743,11 +773,14 @@
                 MY PROFILE
             </div>
 
+
             <h1 class="main-title">
                 ประวัติ<span>ส่วนตัว</span>
             </h1>
 
+
             <div class="gold-line"></div>
+
 
             <p class="subtitle">
                 ทำความรู้จักกับฉัน และเส้นทางสู่ความฝันทางดนตรี
@@ -756,24 +789,54 @@
         </header>
 
 
-        <!-- PROFILE -->
+
+        <!-- =================================
+             PROFILE CONTENT
+        ================================== -->
 
         <section class="profile-box">
 
 
-            <!-- PHOTO -->
+            <!-- =============================
+                 PROFILE PHOTO
+            ============================== -->
 
-          <img src="profile.jpg" alt="รูปโปรไฟล์">
-            .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
+            <div class="photo-section">
 
-            <!-- INFORMATION -->
+                <div class="photo-frame">
+
+                    <!--
+                        ใส่รูปของคุณที่นี่
+
+                        ชื่อไฟล์:
+                        profile.jpg
+
+                        ต้องวางรูปไว้ในโฟลเดอร์เดียวกับ profile.html
+                    -->
+
+                    <img
+                        src="profile.jpg"
+                        alt="รูปโปรไฟล์ของนายวรวัฒน์ เกษร"
+                        class="profile-image"
+                    >
+
+                </div>
+
+
+                <div class="photo-caption">
+                    PROFILE
+                </div>
+
+            </div>
+
+
+
+            <!-- =============================
+                 PERSONAL INFORMATION
+            ============================== -->
 
             <div class="info-section">
+
 
                 <h2 class="info-title">
                     ข้อมูลส่วนตัว
@@ -782,6 +845,8 @@
 
                 <div class="info-list">
 
+
+                    <!-- NAME -->
 
                     <div class="info-row">
 
@@ -796,6 +861,8 @@
                     </div>
 
 
+                    <!-- SCHOOL -->
+
                     <div class="info-row">
 
                         <div class="info-label">
@@ -809,6 +876,8 @@
                     </div>
 
 
+                    <!-- PROGRAM -->
+
                     <div class="info-row">
 
                         <div class="info-label">
@@ -821,6 +890,8 @@
 
                     </div>
 
+
+                    <!-- BIRTHDAY -->
 
                     <div class="info-row">
 
@@ -838,7 +909,10 @@
                 </div>
 
 
-                <!-- DREAM UNIVERSITY -->
+
+                <!-- =========================
+                     DREAM UNIVERSITY
+                ========================== -->
 
                 <div class="dream-school">
 
@@ -846,19 +920,23 @@
                         คณะและมหาวิทยาลัยที่อยากศึกษาต่อ
                     </div>
 
+
                     <div class="dream-value">
                         ดุริยางคศิลป์ มหาวิทยาลัยมหิดล
                     </div>
 
                 </div>
 
-            </div>
 
+            </div>
 
         </section>
 
 
-        <!-- BACK BUTTON -->
+
+        <!-- =================================
+             BACK BUTTON
+        ================================== -->
 
         <div class="back-area">
 
@@ -878,7 +956,10 @@
         </div>
 
 
-        <!-- FOOTER -->
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
 
         <footer class="footer">
 

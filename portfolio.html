@@ -1,474 +1,679 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-}
+    <title>แฟ้มสะสมผลงานของฉัน</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.back-button:hover {
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    transform:
-        translateY(-4px);
+    <style>
 
-    color: #ffe082;
+        /* ==============================
+           RESET
+        ============================== */
 
-    border-color:
-        #ffe082;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    box-shadow:
-        0 12px 30px
-        rgba(0,0,0,0.4);
+        html {
+            scroll-behavior: smooth;
+        }
 
-}
+        body {
+            min-height: 100vh;
 
+            font-family: 'Kanit', sans-serif;
 
-/* =====================================================
-   FOOTER
-===================================================== */
+            color: #ffffff;
 
-.footer {
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(212, 175, 55, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #020b1c 0%,
+                    #061936 45%,
+                    #031025 100%
+                );
 
-    text-align: center;
+            overflow-x: hidden;
+        }
 
-    margin-top: 25px;
 
-    color:
-        rgba(255,255,255,0.3);
+        /* ==============================
+           BACKGROUND DECORATION
+        ============================== */
 
-    font-size: 13px;
+        body::before {
+            content: "";
+            position: fixed;
 
-}
+            width: 500px;
+            height: 500px;
 
+            top: -180px;
+            left: -180px;
 
-/* =====================================================
-   ANIMATION
-===================================================== */
+            background: rgba(212, 175, 55, 0.08);
 
-@keyframes fadeUp {
+            border-radius: 50%;
 
-    from {
+            filter: blur(80px);
 
-        opacity: 0;
+            pointer-events: none;
+        }
 
-        transform:
-            translateY(45px);
+        body::after {
+            content: "";
+            position: fixed;
 
-    }
+            width: 450px;
+            height: 450px;
 
-    to {
+            right: -150px;
+            bottom: -150px;
 
-        opacity: 1;
+            background: rgba(20, 75, 150, 0.22);
 
-        transform:
-            translateY(0);
+            border-radius: 50%;
 
-    }
+            filter: blur(80px);
 
-}
+            pointer-events: none;
+        }
 
 
-@keyframes fadeDown {
+        /* ==============================
+           MUSIC DECORATION
+        ============================== */
 
-    from {
+        .music-symbol {
+            position: fixed;
 
-        opacity: 0;
+            color: rgba(212, 175, 55, 0.12);
 
-        transform:
-            translateY(-25px);
+            font-family: "Times New Roman", serif;
 
-    }
+            pointer-events: none;
 
-    to {
+            z-index: 0;
 
-        opacity: 1;
+            user-select: none;
+        }
 
-        transform:
-            translateY(0);
+        .symbol-1 {
+            top: 18%;
+            left: 6%;
 
-    }
+            font-size: 90px;
 
-}
+            transform: rotate(-12deg);
+        }
 
+        .symbol-2 {
+            top: 45%;
+            right: 7%;
 
-/* =====================================================
-   TABLET
-===================================================== */
+            font-size: 100px;
 
-@media (max-width: 900px) {
+            transform: rotate(10deg);
+        }
 
-    .profile-card {
+        .symbol-3 {
+            bottom: 12%;
+            left: 12%;
 
-        grid-template-columns:
-            1fr;
+            font-size: 70px;
 
-    }
+            transform: rotate(8deg);
+        }
 
-    .photo-frame {
 
-        width: 280px;
-        height: 350px;
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
 
-    }
+        .container {
+            position: relative;
 
-}
+            z-index: 2;
 
+            width: min(1100px, 92%);
 
-/* =====================================================
-   MOBILE
-===================================================== */
+            margin: auto;
 
-@media (max-width: 600px) {
+            min-height: 100vh;
 
-    .page {
+            display: flex;
 
-        padding:
-            40px 15px;
+            flex-direction: column;
 
-    }
+            justify-content: center;
 
-    .profile-card {
+            align-items: center;
 
-        padding:
-            28px 20px;
+            padding: 70px 20px;
+        }
 
-        border-radius: 25px;
 
-        gap: 35px;
+        /* ==============================
+           HEADER
+        ============================== */
 
-    }
+        .header {
+            text-align: center;
 
-    .photo-frame {
+            margin-bottom: 55px;
+        }
 
-        width: 240px;
-        height: 310px;
+        .small-title {
+            color: #d4af37;
 
-    }
+            font-size: 15px;
 
-    .small-title {
+            letter-spacing: 5px;
 
-        font-size: 12px;
+            margin-bottom: 18px;
 
-        letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    }
+        .main-title {
+            font-family: 'Playfair Display', serif;
 
-    .header p {
+            font-size: clamp(38px, 6vw, 72px);
 
-        font-size: 15px;
+            font-weight: 700;
 
-    }
+            line-height: 1.15;
 
-    .bottom-section {
+            color: #ffffff;
 
-        grid-template-columns:
-            1fr;
+            text-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.5);
+        }
 
-    }
+        .main-title span {
+            color: #d4af37;
 
-    .info-box {
+            display: block;
 
-        grid-template-columns:
-            50px 1fr;
+            margin-top: 5px;
+        }
 
-    }
+        .subtitle {
+            margin-top: 20px;
 
-    .info-icon {
+            color: rgba(255,255,255,0.68);
 
-        width: 48px;
-        height: 48px;
+            font-size: 17px;
 
-        font-size: 23px;
+            font-weight: 300;
 
-    }
+            letter-spacing: 1px;
+        }
 
-    .info-text {
 
-        font-size: 16px;
+        /* ==============================
+           GOLD LINE
+        ============================== */
 
-    }
+        .gold-line {
+            width: 150px;
+            height: 2px;
 
-    .quote {
+            margin: 25px auto 0;
 
-        padding:
-            22px 18px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #d4af37,
+                    #f5d77a,
+                    #d4af37,
+                    transparent
+                );
 
-    }
+            box-shadow:
+                0 0 15px rgba(212, 175, 55, 0.45);
+        }
 
-    .quote p {
 
-        font-size: 17px;
+        /* ==============================
+           MENU
+        ============================== */
 
-    }
+        .menu {
+            width: 100%;
 
-}
+            display: grid;
 
-</style>
+            grid-template-columns:
+                repeat(3, 1fr);
 
+            gap: 25px;
+
+            max-width: 1000px;
+        }
+
+
+        /* ==============================
+           BUTTON CARD
+        ============================== */
+
+        .menu-card {
+            position: relative;
+
+            min-height: 260px;
+
+            padding: 35px 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(16, 46, 88, 0.9),
+                    rgba(3, 19, 43, 0.92)
+                );
+
+            border: 1px solid rgba(212, 175, 55, 0.38);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.35),
+                inset 0 0 30px rgba(255,255,255,0.015);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .menu-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #d4af37,
+                    transparent
+                );
+
+            opacity: 0.8;
+        }
+
+        .menu-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            top: -100px;
+            right: -80px;
+
+            border-radius: 50%;
+
+            background: rgba(212, 175, 55, 0.06);
+
+            transition: 0.4s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-12px);
+
+            border-color: #d4af37;
+
+            box-shadow:
+                0 28px 60px rgba(0,0,0,0.5),
+                0 0 30px rgba(212,175,55,0.12);
+        }
+
+        .menu-card:hover::after {
+            transform: scale(1.5);
+
+            background: rgba(212,175,55,0.09);
+        }
+
+
+        /* ==============================
+           ICON
+        ============================== */
+
+        .icon {
+            position: relative;
+
+            z-index: 2;
+
+            width: 82px;
+            height: 82px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 23px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(212,175,55,0.55);
+
+            background:
+                rgba(212,175,55,0.07);
+
+            color: #d4af37;
+
+            font-size: 38px;
+
+            box-shadow:
+                0 0 25px rgba(212,175,55,0.08);
+
+            transition: 0.35s ease;
+        }
+
+        .menu-card:hover .icon {
+            transform: scale(1.08);
+
+            background: rgba(212,175,55,0.12);
+
+            box-shadow:
+                0 0 30px rgba(212,175,55,0.2);
+        }
+
+
+        /* ==============================
+           CARD TITLE
+        ============================== */
+
+        .card-title {
+            position: relative;
+
+            z-index: 2;
+
+            font-family: 'Playfair Display', serif;
+
+            font-size: 27px;
+
+            font-weight: 600;
+
+            color: #f5d77a;
+
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            position: relative;
+
+            z-index: 2;
+
+            font-size: 14px;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            color: rgba(255,255,255,0.65);
+
+            max-width: 230px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        .footer {
+            margin-top: 55px;
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.42);
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+        .footer span {
+            color: #d4af37;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                grid-template-columns: 1fr;
+
+                max-width: 500px;
+            }
+
+            .menu-card {
+                min-height: 220px;
+            }
+
+            .header {
+                margin-bottom: 40px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding:
+                    50px 15px;
+            }
+
+            .small-title {
+                font-size: 12px;
+
+                letter-spacing: 3px;
+            }
+
+            .main-title {
+                font-size: 38px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .menu-card {
+                min-height: 205px;
+
+                padding: 25px 20px;
+            }
+
+            .icon {
+                width: 68px;
+                height: 68px;
+
+                font-size: 30px;
+            }
+
+            .card-title {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
 </head>
 
 
 <body>
 
+    <!-- Decorative music symbols -->
 
-<!-- Background -->
+    <div class="music-symbol symbol-1">♪</div>
 
-<div class="light"></div>
+    <div class="music-symbol symbol-2">♫</div>
 
-<div class="light2"></div>
-
-
-
-<main class="page">
-
-<div class="container">
+    <div class="music-symbol symbol-3">♬</div>
 
 
-<!-- =================================================
-     HEADER
-================================================= -->
+    <!-- Main -->
 
-<header class="header">
-
-    <div class="gold-line"></div>
-
-    <div class="small-title">
-        PERSONAL PORTFOLIO
-    </div>
-
-    <h1>
-        ประวัติส่วนตัว
-    </h1>
-
-    <p>
-        ทำความรู้จักกับตัวตนและความสนใจของผม
-    </p>
-
-</header>
+    <main class="container">
 
 
+        <!-- Header -->
 
-<!-- =================================================
-     PROFILE
-================================================= -->
+        <header class="header">
 
-<section class="profile-card">
-
-
-    <!-- PHOTO -->
-
-    <div class="photo-section">
-
-        <div class="photo-frame">
-
-            <img
-                src="profile.jpg"
-                alt="รูปโปรไฟล์ นายวรวัฒน์ เกษร">
-
-        </div>
-
-    </div>
-
-
-
-    <!-- INFORMATION -->
-
-    <div class="info">
-
-
-        <div class="name">
-            นายวรวัฒน์ เกษร
-        </div>
-
-        <div class="name-eng">
-            WORAWAT KESORN
-        </div>
-
-
-
-        <!-- BIRTHDAY -->
-
-        <div class="info-box">
-
-            <div class="info-icon">
-                🎂
+            <div class="small-title">
+                PORTFOLIO
             </div>
 
-            <div>
+            <h1 class="main-title">
+                แฟ้มสะสมผลงาน
+                <span>ของฉัน</span>
+            </h1>
 
-                <div class="info-label">
-                    วันเกิด
+            <div class="gold-line"></div>
+
+            <p class="subtitle">
+                แรงบันดาลใจ • ความสามารถ • ประสบการณ์
+            </p>
+
+        </header>
+
+
+        <!-- Menu -->
+
+        <section class="menu">
+
+
+            <!-- ผลงาน -->
+
+            <a
+                href="music.html"
+                class="menu-card"
+            >
+
+                <div class="icon">
+                    ♫
                 </div>
 
-                <div class="info-text">
-                    5 สิงหาคม พ.ศ. 2551
+                <h2 class="card-title">
+                    ผลงาน
+                </h2>
+
+                <p class="card-description">
+                    รวมผลงานทางด้านดนตรี
+                    และผลงานที่ภาคภูมิใจ
+                </p>
+
+            </a>
+
+
+            <!-- คำนำ -->
+
+            <a
+                href="volunteer.html"
+                class="menu-card"
+            >
+
+                <div class="icon">
+                    ✦
                 </div>
 
-            </div>
+                <h2 class="card-title">
+                    คำนำ
+                </h2>
 
-        </div>
+                <p class="card-description">
+                    เรื่องราว แรงบันดาลใจ
+                    และเส้นทางการเรียนรู้
+                </p>
+
+            </a>
 
 
+            <!-- ประวัติส่วนตัว -->
 
-        <!-- EDUCATION -->
+            <a
+                href="profile.html"
+                class="menu-card"
+            >
 
-        <div class="info-box">
-
-            <div class="info-icon">
-                🎓
-            </div>
-
-            <div>
-
-                <div class="info-label">
-                    สถานศึกษา
+                <div class="icon">
+                    ♩
                 </div>
 
-                <div class="info-text">
-                    โรงเรียนบ้านบึง
-                    "อุตสาหกรรมนุเคราะห์"
-                </div>
+                <h2 class="card-title">
+                    ประวัติส่วนตัว
+                </h2>
 
-            </div>
+                <p class="card-description">
+                    ข้อมูลส่วนตัว
+                    ความสนใจ และความสามารถ
+                </p>
 
-        </div>
+            </a>
 
 
+        </section>
 
-        <!-- INTEREST -->
 
-        <div class="info-box">
+        <!-- Footer -->
 
-            <div class="info-icon">
-                🎵
-            </div>
+        <footer class="footer">
 
-            <div>
+            <p>
+                My Portfolio
+                <span>◆</span>
+                Music &amp; Art
+            </p>
 
-                <div class="info-label">
-                    ความสนใจ
-                </div>
+        </footer>
 
-                <div class="info-text">
-                    College of Music
-                </div>
 
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     SKILLS
-================================================= -->
-
-<section class="bottom-section">
-
-
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            🎸
-        </div>
-
-        <div class="feature-title">
-            ความสามารถ
-        </div>
-
-        <div class="feature-text">
-
-            • มีความสามารถทางดนตรี<br>
-
-            • มีทักษะด้านการฟังเพลงและการฟังดนตรี<br>
-
-            • สนใจและเรียนรู้ด้านดนตรีอย่างต่อเนื่อง
-
-        </div>
-
-    </div>
-
-
-
-    <div class="feature-card">
-
-        <div class="feature-icon">
-            🎧
-        </div>
-
-        <div class="feature-title">
-            งานอดิเรก
-        </div>
-
-        <div class="feature-text">
-
-            • เล่นเบสไฟฟ้า<br>
-
-            • ฟังเพลง<br>
-
-            • ฝึกฝนและพัฒนาทักษะทางดนตรี
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================
-     QUOTE
-================================================= -->
-
-<section class="quote">
-
-    <p>
-
-        <span>“</span>
-
-        ดนตรีไม่ใช่เพียงสิ่งที่ผมชอบ
-        แต่เป็นสิ่งที่ผมอยากเรียนรู้และพัฒนาตัวเองต่อไป
-
-        <span>”</span>
-
-    </p>
-
-</section>
-
-
-
-<!-- =================================================
-     BUTTON
-================================================= -->
-
-<div class="buttons">
-
-    <a
-        href="portfolio.html"
-        class="back-button">
-
-        ← กลับไปหน้าแฟ้มสะสมผลงาน
-
-    </a>
-
-</div>
-
-
-
-<div class="footer">
-
-    © 2026 Worawat Kesorn • Personal Portfolio
-
-</div>
-
-
-</div>
-
-</main>
-
+    </main>
 
 </body>
-
 </html>

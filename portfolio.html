@@ -58,6 +58,7 @@
 
         body::before {
             content: "";
+
             position: fixed;
 
             width: 500px;
@@ -77,6 +78,7 @@
 
         body::after {
             content: "";
+
             position: fixed;
 
             width: 450px;
@@ -138,6 +140,60 @@
             font-size: 70px;
 
             transform: rotate(8deg);
+        }
+
+
+        /* ==============================
+           BACK BUTTON
+        ============================== */
+
+        .back-button {
+            position: fixed;
+
+            top: 25px;
+            left: 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 18px;
+
+            color: #f5d77a;
+
+            text-decoration: none;
+
+            font-family: 'Kanit', sans-serif;
+
+            font-size: 14px;
+
+            background: rgba(6, 25, 54, 0.85);
+
+            border: 1px solid rgba(212, 175, 55, 0.45);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.3);
+
+            backdrop-filter: blur(8px);
+
+            z-index: 10;
+
+            transition: 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #ffffff;
+
+            background: rgba(212, 175, 55, 0.15);
+
+            border-color: #d4af37;
+
+            transform: translateX(-3px);
+
+            box-shadow:
+                0 0 20px rgba(212, 175, 55, 0.18);
         }
 
 
@@ -505,7 +561,16 @@
 
             .container {
                 padding:
-                    50px 15px;
+                    70px 15px 50px;
+            }
+
+            .back-button {
+                top: 15px;
+                left: 15px;
+
+                padding: 8px 14px;
+
+                font-size: 13px;
             }
 
             .small-title {
@@ -547,7 +612,18 @@
 
 <body>
 
-    <!-- Decorative music symbols -->
+    <!-- ==============================
+         BACK BUTTON
+    ============================== -->
+
+    <a href="index.html" class="back-button">
+        ← ย้อนกลับ
+    </a>
+
+
+    <!-- ==============================
+         DECORATIVE MUSIC SYMBOLS
+    ============================== -->
 
     <div class="music-symbol symbol-1">♪</div>
 
@@ -556,12 +632,14 @@
     <div class="music-symbol symbol-3">♬</div>
 
 
-    <!-- Main -->
+    <!-- ==============================
+         MAIN
+    ============================== -->
 
     <main class="container">
 
 
-        <!-- Header -->
+        <!-- HEADER -->
 
         <header class="header">
 
@@ -583,7 +661,9 @@
         </header>
 
 
-        <!-- Menu -->
+        <!-- ==============================
+             MENU
+        ============================== -->
 
         <section class="menu">
 
@@ -660,7 +740,9 @@
         </section>
 
 
-        <!-- Footer -->
+        <!-- ==============================
+             FOOTER
+        ============================== -->
 
         <footer class="footer">
 
